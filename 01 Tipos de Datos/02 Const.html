@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript variables constantes</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/const
+
+           //      Las variables constantes son aquellas que no deben de cambiar durante toda la
+           // Ejecución del código. Deben tener un valor asignado al momento de ser declaradas
+           // y como nota al pie, si son utilizadas para acceder a estructuras de datos
+           // (datos compuestos), si bien el valor de la constante no se modificará nunca,
+           // el valor de los datos dentro de ella si puede ser modificado.
+
+
+            //-------------------------------------------------------------------------------------------------
+            //      Una constante de un valor primitivo que no puede ser alterada de ninguna manera.
+            const PI = 3.1416;
+            console.log(PI);
+
+           //      Una constante de un objeto (un tipo de dato compuesto), cuyo valor de uno de sus
+           // atributos es modificado durante el tiempo de ejecución del código. Esto también es aplicable
+           // a otras estructuras de datos compuestos. Similar a la declaración de punteros constantes en C.
+
+            //-------------------------------------------------------------------------------------------------
+            //      Declaracion de la constante y asignación del atributo saludo
+            const OBJETO = {
+                saludo: "Hello world",
+            }
+            console.log(OBJETO.saludo);
+
+            //      Modificación del valor almacenado en el atributo saludo dentro de la variable OBJETO
+            OBJETO.saludo = "Hola mundo";
+            console.log(OBJETO.saludo);
+
+
+
+
+        </script>
+    </body>
+</html>

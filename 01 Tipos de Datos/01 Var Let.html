@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript variables locales y globales</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/var
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/let
+
+            var helloWorldGlobal = "Hello World Global"; //  *var se declara como variable de ambito global
+            let helloWorldLocal = "Hello World Local"; //  *let declara la variable local
+
+            console.log("Variable global antes del bloque " + helloWorldGlobal);
+            console.log("Variable local antes del bloque " + helloWorldLocal);
+
+           //      El alcance de las variables cambia según en donde se declaran y con que
+           // palabra clave se le asigna el nombre al indicador.
+           //      Con la palabra reservada *var siempre va a crear variables de alcance global,
+           // independientemente de donde se declare. Por otro lado, la palabra reservada *let
+           // dará lugar a una variable cuyo alcance va a estar limitado al bloque en el que está
+           // fuera declarada.
+ 
+           //      Al ser -helloWorldGlobal- una variable global, la modificación de esta dentro de
+           // un bloque provoca que se borre su estado original y se reemplace por el estado que se
+           // le es asignado dentro del bloque. No Obstante, la variable -helloWorldLocal- al estar
+           // declarada con la palabra reservada *let no sufrirá cambios en su valor fuera del bloque           
+           // de código
+
+            {
+                var helloWorldGlobal = "Hola Mundo Global";
+                let helloWorldLocal = "Hola Mundo Local";
+                console.log("Variable global en el bloque " + helloWorldGlobal);
+                console.log("Variable local en el bloque " + helloWorldLocal);
+
+            }
+
+            console.log("Variable global despues del bloque " + helloWorldGlobal);
+            console.log("Variable local despues del bloque " + helloWorldLocal);
+
+            //      El uso de variables globales, puede ser en la mayoría de los casos considerado
+            // una mala práctica a la hora de programar.
+            
+        </script>
+    </body>
+
+
+
+
+</html>

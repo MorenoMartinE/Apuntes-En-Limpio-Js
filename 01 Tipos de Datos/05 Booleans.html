@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript variables booleans</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+            //      Los booleanos son variables sencillas que admiten solo dos tipos de datos,
+            // estos pueden ser verdaderos o falsos. Como algunas de las variables previamente vistas
+            // pueden ser declarados solo utilizando el signo de asignación o invocando a su método
+            // constructor
+
+            let valueTrue = true;
+            let valueFalse = new Boolean(false);
+
+            console.log(valueTrue, valueFalse);
+
+            //      Al ser inicializados con su método constructor, también pueden serle "asignados"
+            // otros valores que sin ser ni verdaderos ni falsos, en la práctica tienden a estos.
+            // Algunos ejemplos:
+
+            // 0 tiende a falso
+            // "" tiende a falso
+            // -7 tiende a verdadero
+            // "s" tiende a verdadero
+
+            //  Más sobre los valores Truthy y Falsy:
+            // https://developer.mozilla.org/es/docs/Glossary/Truthy
+            // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+        </script>
+    </body>
+</html>

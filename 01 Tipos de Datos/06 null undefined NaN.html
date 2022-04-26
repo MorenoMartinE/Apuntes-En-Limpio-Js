@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript variables numericas</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/null
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/undefined
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/NaN
+
+            //      Tanto null como undefined son estados que hacen referencia a la ausencia de valor
+            // dentro de la misma. Con la diferencia de que undefined es asignado por js, por falta de
+            // asignación por parte del usuario mientras que null es un valor intencional que este le da
+
+            let variableNull = null; //variable null inicializada
+            let variableUndefined; //variable undefined no inicializada
+           
+
+            //      NaN por otro lado significa not a number. Es el valor que suele darnos Js al momento de
+            // intentar realizar operaciones aritméticas con variables que no son números y por ende no son
+            // susceptibles de esto.
+
+            let noEsUnNumero = "hola" * 3.7; //Si se imprime en consola su valor será de NaN
+        </script>
+    </body>
+</html>

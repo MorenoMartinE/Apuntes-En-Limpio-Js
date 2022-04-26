@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript arreglos</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+            //      Un arreglo es una estructura de datos que funciona como una colección de elementos.
+            // A diferencia de otros lenguajes de tipado más fuerte, en Js no es necesario que
+            // los elementos contenidos en este sean del mismo tipo ni que se defina cuántos espacios de
+            // memoria deben de ser reservados a la hora de declararlos (esto último debido a que se alojan
+            // dinámicamente en memoria).
+
+            //      Declaracion de un arreglo
+            const a = [0, 1, 2];
+
+            //      Accediendo a una posicion de un arreglo
+            console.log(a[1]);
+
+            //      Tambien podemos declarar arreglos dentro de otros
+            const b = [[0, "posicion cero"], "1", 2, "tres"];
+
+            //      Y para acceder al arreglo hijo dentro del padre
+            console.log(b[0][1]);
+
+            //      Como nota al pie, si bien los arreglos están declarados como constantes y estos no pueden mutar,
+            // el contenido dentro de estos si puede ser modificado, debido a que el arreglo no es su contenido, este
+            // es una referencia por la cual se accede al contenido
+    
+            //      Los arreglos también pueden ser creados, llenados y/o modificados con sus método off, fill, constructor, etc.
+            // También hay muchos métodos para modificar y manipular los arreglos, estos se encuentran recopilados en la MDN.
+            const c = Array.of(1, 2, 3, 4);
+
+
+            //      A DESTACAR!!!!
+            //      Método forEach, sirve para crear una estructura de control for, que iterara tantas veces el codigo pasado a este
+            // método como parámetro como posiciones de memoria posea el arreglo sobre el cual este método está siendo invocado
+            c.forEach(function(el, index){
+                console.log(`en pos ${index} hay almacenado ${el}`);
+            });
+        </script>
+    </body>
+</html>

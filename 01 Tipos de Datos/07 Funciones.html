@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript variables numericas</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions
+
+            //      Una funcion es un bloque de código auto contenido que es definido solo una vez y
+            // puede ser invocado tantas veces como sea necesario. También cuenta con la capacidad de
+            // recibir argumentos y devolver datos. Particularmente en Js estas son consideradas
+            // objetos.
+
+            //      Declaracion de una funcion y su posterior invocación.
+            function funcionDeclarada(){
+                console.log("uno");
+                console.log("dos");
+                console.log("tres");
+            }
+
+            funcionDeclarada();
+
+            //      Una función puede retornar cualquier tipo de dato o estructura de estos mismos. Esto se
+            // hace con el uso de la palabra reservada return dentro del bloque de código de esta misma.
+            // si Js encuentra un return dentro de un bloque de código dentro de la ejecución de una función
+            // este ignorará el resto de las líneas de código que esta posea.
+            function funcionQueDevuelveValor(){
+                return "Este es el valor que se retorna"
+            }
+            
+            let retornoDeFuncion = funcionQueDevuelveValor();
+            console.log(retornoDeFuncion);
+
+            //      Una funcion tambien puede recibir valores en forma de argumentos y hacer uso de estos
+            // durante su tiempo de ejecución. También le pueden ser dados a estos argumentos valores por
+            // defecto que utilizará en caso de ser invocada sin habérsele dado datos.
+            let parametroDeEjemplo = "Valor dado durante la invocacion";
+
+            function funcionQueReciveValores(valor="Valor por defecto"){
+                console.log(valor);
+            }
+
+            funcionQueReciveValores(parametroDeEjemplo); //Función a la que se le pasa un parametro
+            funcionQueReciveValores(); //Función que utiliza un valor por defecto
+
+            //      En Js también podemos crear funciones expresadas, asignando funciones dentro de
+            // variables de forma anónima. Es decir sin nombre. Estas funciones no pueden ser ejecutadas
+            // previo a su definición
+
+            const funcionExpresada = function() {
+                console.log("Esto es una función expresada, asignada como valor a una variable");
+            }
+
+            funcionExpresada();
+
+
+
+
+        </script>
+    </body>
+</html>

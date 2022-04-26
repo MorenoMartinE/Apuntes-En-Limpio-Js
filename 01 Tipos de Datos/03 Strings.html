@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Cadenas de texto</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String
+
+
+           //      Si se declara la cadena de texto solo con el signo de asignación
+           // se tratara a la variable creada como un dato "primario", pero si es
+           // declarada con el método constructor "new String('Valor')" esta variable
+           // será tratada como un objeto, aunque en términos prácticos ambas pueden
+           // ser utilizadas de igual manera.
+
+            let cadena = 'Cadena de texto';
+            let cadenaConstructor = new String('Cadena de texto');
+
+            console.log(cadena, cadenaConstructor);
+
+            
+            
+            //      Concatenación e interpolación
+            let firstName = 'Martin';
+            let lastName = 'Moreno';
+
+            //      Ejemplo de concatenación. En este caso podemos combinar el contenido de
+            // una o más cadenas de texto con el uso del símbolo +
+            let text = 'Hi my name is ' + firstName + ' '; 
+            text += lastName + '.';
+
+            //      Ejemplo de interpolación. En este caso podemos combinar el contenido de
+            // una o más cadenas de texto o variables, con una sintaxis mas simple. Disponible
+            // a partir de la introducción de ES6. Requiere el uso del acento invertido.
+
+            let text2 = `Hi my name is ${firstName} ${lastName}.`;
+
+            //      El resultado del uso de ambas declaraciones será el mismo, aunque en
+            // la mayoría de los casos suele ser mas conveniente el uso de la interpolación
+
+            console.log(text);
+            console.log(text2);
+
+            //      Algunos usos extras del acento invertido en ES6
+            let invExample = `
+            Pueden utilizarse 
+            saltos de linea,      identaciones, etc...
+            `;
+
+            console.log(invExample)
+
+        </script>
+    </body>
+</html>

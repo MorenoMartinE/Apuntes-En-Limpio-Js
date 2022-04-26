@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Objetos</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+            //      Un objeto es una estructura de datos, aunque no es recomendable esta estructura
+            // también puede ser declarada con su método constructor al igual que otras estructuras
+            // de datos.
+            //      También tenemos que diferenciar entre las propiedades y los métodos. Se considera
+            // a cualquier variable dentro de un objeto una propiedad, mientras que las funciones son
+            // consideradas métodos.
+
+            //      Creacion de objeto
+            const OBJETO = {
+                nombre: "objeto",
+                datoNumerico: 1,
+                arreglo: "[1, 2, 3, 4]",
+                datoBoolean: true,
+                objetoHijo: {
+                    nombre: "objeto Hijo",
+                },
+                funcion: function(){
+                    console.log("funcion dentro de objeto");
+                },
+            };
+            
+            console.log(OBJETO);
+
+            //      Para acceder a algún valor específico almacenado dentro del objeto, la forma más sencilla
+            // es utilizar la notación de punto, aunque puede ser utilizada la notación por corchetes.
+
+            console.log(OBJETO.datoBoolean); // LLamado a una propiedad
+            OBJETO.funcion();                // LLamado a un metodo
+        </script>
+    </body>
+</html>
