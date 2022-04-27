@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Estructuras de control</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+            //      La desestructuración es una forma particular y más práctica de asignar valores a variables incorporada
+            // dentro de Js a partir de ES6, puede ser utilizado para descomponer en variables primitivas estructuras
+            // de datos más complejas como arreglos u objetos.
+
+            const arr = [1, 2, 3];
+            const [variable1, variable2, variable3] = arr;
+
+            console.log(variable1, variable2, variable3);
+
+            const OBJETO = {
+                nombre: "objeto",
+                numero: 1,
+            }
+
+            let {nombre, numero} = OBJETO; // En este caso es importante que el nombre de las variables sea igual
+                                           // al nombre de las preopiedades dentro del objeto que se esta destructurando
+
+            console.log(nombre, numero);
+
+
+
+
+        </script>
+    </body>
+</html>

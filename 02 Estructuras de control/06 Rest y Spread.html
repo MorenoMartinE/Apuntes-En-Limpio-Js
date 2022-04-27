@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Objetos literales</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+            // https://developer.mozilla.org/es/docs/Glossary/REST
+
+            //      Los parámetros rest nos permiten crear valores dinámicamente durante la ejecución de
+            // un bloque de codigo, en base a los parámetros que estemos dándole al momento de ejecutarse
+
+            function sumar(...a){
+                let resultado = 0;
+
+                a.forEach(function (n){
+                    resultado += n;
+                });
+
+                return resultado;
+            };
+
+            console.log(sumar(1, 3, 5));
+
+            //      Con el spread operator podemos realizar una acción similar, pero a diferencia del rest operator
+            // este puede ser invocado en cualquier sentencia de nuestro codigo y no solo en los parámetros de una
+            // funcion.
+
+            const 
+                arr1 = [1, 2, 3],
+                arr2 = [4, 5];
+
+            const arr3 = [...arr1, ...arr2];
+
+            console.log(arr3);
+        </script>
+    </body>
+</html>

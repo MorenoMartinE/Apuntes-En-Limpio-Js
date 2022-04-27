@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Objetos literales</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Working_with_Objects
+
+            //      Pueden asignarse atributos y métodos a un objeto indicando simplemente el nombre
+            // de estos al momento de la creación de este mismo. Esta función fue agregada en ES6
+
+            let nombre = "objeto";
+            let numero = 1;
+            
+
+            const OBJETO = {
+                nombre,
+                numero,
+                mostrar(){
+                    console.log(nombre,numero);
+                }
+            }
+
+            OBJETO.mostrar();
+
+        </script>
+    </body>
+</html>

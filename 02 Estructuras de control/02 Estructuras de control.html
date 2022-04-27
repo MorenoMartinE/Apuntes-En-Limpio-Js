@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Estructuras de control</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/if...else
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/while
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/do...while
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/switch
+
+            //      Todas las estructuras y ciclos pueden anidarse dentro de otras tantas
+            // veces como sea necesario
+    
+            
+            //      if crea un bloque de código que se ejecuta si la condición dentro de los ()
+            // resulta verdadera, de ser falsa el bloque de código es ignorado. A su vez puede
+            // agregarse un bloque de código posterior a este con la palabra reservada else
+            // que se ejecutará si la condición del if previo resultó ser falsa
+            let a = true;
+
+            if(a == true){
+                console.log("a es verdadero");
+            }else{
+                console.log("a es falso");
+            }
+
+
+            //      El operador ternario ? es una forma simplificada de ejecutar una línea de código
+            // u otra dependiendo de la veracidad de una sentencia previa. Si la sentencia es falsa
+            // se ejecutará el código que sigue luego de los : . Su funcionamiento es similar a if else.
+            let numero = -1
+
+            let numeroPositivo = (numero >= 0) 
+                ?"El numero es positivo"
+                :"El numero es negativo";
+            console.log(numeroPositivo);
+
+
+            //      while crea un bloque de código que se ejecutará una y otra vez, en tanto y
+            // en cuanto su condición siga siendo verdadera
+            let b = 1;
+
+            while(b < 3){
+                console.log("b sigue siendo menor que 3");
+                b++;
+            }
+            console.log("b dejo de ser menor qur 3");
+
+
+            //      do while es igual que while, solo que se ejecuta por lo menos una vez
+            // independiente de si la sentencia dentro de los () es o no verdadera
+            do{
+                console.log("Este mensaje se imprimira indefinidamente si 1 es igual a 2");
+            }while(1 == 2);
+
+
+            //      El ciclo for funciona igual que el ciclo while, con la diferencia de
+            // que este está pensado para ser ejecutado con un contador interno.
+            for(let i = 0; i < 3; i++){
+                console.log(`el ciclo for se ejecuto ${i+1} veces`);
+            }
+
+            //      break y continue son palabras claves que tienen como propósito controlar
+            // el flujo de las estructuras de control dentro de control dentro de js.
+            //      Break por su parte "rompe" la ejecución del ciclo e ignora todo el código restante
+            // del bloque en donde es invocada. El ejemplo de break se dará en el switch case.
+            //      Mientras que continue, solo "rompe" la iteración actual del ciclo
+
+            let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            for(let i = 0; i < 10; i++){
+                
+                if(arr[i] %2 != 0){
+                    continue;   //  Salta las iteraciones en las cuales los numeros almacenados en el arreglo no sean pares
+                }else{
+                    console.log(arr[i]);
+                }
+            }
+
+
+            //      switch compara una variable contra sus posibles casos y ejecuta aquel
+            // que coincida con esta. Si este no tiene la palabra reservada break, seguirá ejecutando los
+            // casos posteriores.
+            let c = 2;
+
+            switch(c){
+                case 1:
+                    console.log(`Este es el caso ${c}`);
+                    break;
+                case 2:
+                    console.log(`Este es el caso ${c}`);
+                    break;
+                case 3:
+                    console.log(`Este es el caso ${c}`);
+                    break;
+                default:
+                    console.log("La variable no coincide con ningun caso");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Estructuras de control</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/try...catch
+
+            //      Esta es una estructura de datos, creada para capturar errores durante la ejecución
+            // de un bloque de código. En la sección try se agrega el código a evaluar, si se encuentra
+            // un error este va a ser capturado en el bloque del catch y por último en el bloque finally
+            // se ejecutará siempre luego de un bloque try catch independientemente de si existió
+            // un error o no.
+
+            try{
+                variableNoDeclarada
+            }catch(error){
+                console.log(error);
+            }finally{
+                console.log("El bloque finally suele estar en desuso");
+            }
+
+
+            //      También podemos crear nuestros propios errores personalizados con el uso de la
+            // palabra reservada throw y el objeto Error.
+
+            try{
+                throw new Error("Este es el mensaje del error personalizado");
+            }catch(error){  
+                console.log(error);
+            }
+        </script>
+    </body>
+</html>
