@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Prototipos</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/Classes_in_JavaScript
+
+            //      La herencia es el proceso por el cual un prototipo de objeto hereda de su padre
+            // sus propiedades y métodos.
+
+            function ObjetoPadre(nombre, numero){
+                this.nombre = nombre;
+                this.numero = numero;
+            }
+
+            function ObjetoHijo(nombre, numero, estado){
+                this.padre = ObjetoPadre;
+                this.padre(nombre, numero);
+                this.estado = estado;
+            }
+
+            
+            const OBJETO = new ObjetoHijo("objeto", 1, "hijo");
+            console.log(OBJETO.nombre, OBJETO.numero, OBJETO.estado);
+        </script>
+    </body>
+</html>

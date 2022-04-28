@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Prototipos</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes
+
+            //      A diferencia de otros lenguajes de programación, tenemos algunos recortes.
+            // Entre otros no podremos tener clases públicas, privadas, protegidas, etc.
+            // En este archivo podremos ver los métodos get, set y estáticos.
+    
+            //      Los métodos estáticos son aquellas que pueden ser utilizados sin necesidad
+            // de crear una instancia de la clase
+    
+            //      Los metodos set y get son aquellos que nos permiten establecer y obtener,
+            // respectivamente, valores de uno o más atributos dentro de una instancia de
+            // la clase.
+            //      Los métodos get y set, deben ser tratados a la hora de la ejecución como
+            // si fueran atributos.
+
+            class ObjetoEjemplo{
+                constructor(nombre, numero){
+                    this.nombre = nombre;
+                    this.numero = numero;
+                    this.atributoNoAsignado = null;
+                }
+
+                
+                static ejemploMetodoEstatico(){
+                    console.log("Esto es un metodo estatico")
+                }
+
+                get getAtributoNoAsignado(){
+                    return this.atributoNoAsignado;
+                }
+
+                set setAtributoNoAsignado(atributoNoAsignado){
+                    this.atributoNoAsignado = atributoNoAsignado;
+                }
+            }
+
+            ObjetoEjemplo.ejemploMetodoEstatico();
+
+            const OBJETO = new ObjetoEjemplo("objeto", 1);
+
+            OBJETO.setAtributoNoAsignado = "valor obtenido por metodo set";
+            console.log(OBJETO.getAtributoNoAsignado);
+        </script>
+    </body>
+</html>

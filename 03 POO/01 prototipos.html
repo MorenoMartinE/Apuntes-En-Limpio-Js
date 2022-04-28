@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Prototipos</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/Object_prototypes
+
+            //      Una clase puede ser considerada un modelo a seguir en el que podemos basarnos
+            // para crear un objeto. Este contará con atributos y métodos. Los atributos son cualidades
+            // previamente establecidas en la clase, que posee cada instancia de esta (objeto creado
+            // en base a esa clase). Y los métodos son las distintas acciones y formas que tenemos
+            // para interactuar con el objeto en sí mismo y sus atributos, estos también vienen
+            // definidas dentro de la clase del objeto.
+            //      En síntesis los atributos son variables y los métodos son funciones dentro de
+            // un objeto.
+    
+            //      Ejemplo de función constructora y creación de una instancia. Como nota al pie al
+            // utilizar la palabra reservada this. estamos dando a entender que nos referimos al
+            // contexto en el cual nos encontramos. Esto no funcionaria en arrow functions debido a
+            // que toman el contexto del bloque de código donde son invocadas como si fuese el propio.
+            function FuncionConstructora(nombre, numero){
+                this.nombre = nombre; 
+                this.numero = numero;
+
+                this.saludar = function () {
+                    console.log(`Hola, mi nombre es ${this.nombre} y mi id es ${numero}`)
+                };
+            }
+
+            const OBJETO = new FuncionConstructora("objeto", 1);
+            OBJETO.saludar();
+
+            const OBJETO2 = new FuncionConstructora("objeto 2", 2);
+            OBJETO2.saludar();
+        </script>
+    </body>
+</html>

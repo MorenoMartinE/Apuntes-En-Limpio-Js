@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Prototipos</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes
+
+            //      Las clases son una nueva forma de crear un modelo para crear objetos y estas fueron
+            // introducidas en ES6. En tiempo de ejecución estas clases funcionan exactamente igual que
+            // los prototipos.
+
+            class ObjetoPadre{
+                constructor(nombre, numero){
+                    this.nombre = nombre;
+                    this.numero = numero;
+                }
+
+                presentarte(){
+                    console.log(this.nombre, this.numero);
+                }
+            }
+
+            class ObjetoHijo extends ObjetoPadre{
+                constructor(nombre, numero, estado){
+                    super(nombre, numero);  //Super es un método que llama al constructor de la clase padre
+                    this.estado = estado;
+                }
+                    
+            }
+
+            
+            const OBJETO = new ObjetoHijo("objeto", 1, "hijo");
+            console.log(OBJETO.nombre, OBJETO.numero, OBJETO.estado);
+            OBJETO.presentarte();
+
+        </script>
+    </body>
+</html>
