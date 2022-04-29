@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Ejercicios</h1>
+        <script>
+            // 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+            // 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+            // 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+            // 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+            // 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+            // 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+            // 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+            // 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+            // 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+            // 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+            // 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+            const ejercicio1 = (s) => {
+                let contrador;
+
+                if(typeof s === 'string' || s instanceof String){
+                    contador = s.length;
+                    console.log(`La cantidad de caracteres en el texto es ${contador}`);
+                    return contador;
+                }else{
+                    console.error("El valor ingresado no es valido.");
+                }
+            }
+            //ejercicio1("Hola");
+
+            
+            const ejercicio2 = (s, n) => {
+
+                let arr;
+                let str = "";
+                if(typeof s === 'string' || s instanceof String && typeof n === 'number'){  
+                    arr = s.split("", n);
+                    
+                    for(let i = 0; i < arr.length; i++){
+                        str += arr[i];
+                    }
+
+                    console.log(str);
+                    return str;
+                }else{
+                    console.error("Uno de los valores ingresados no es valido");
+                }
+            }
+            //ejercicio2("Hola mundo", 4);
+
+
+            const ejercicio3 = (s, c) => {
+
+                let arr;
+
+                if((typeof s === 'string' || s instanceof String) && (typeof c === 'string' || c instanceof String)){
+                    arr = s.split(c);
+                    console.log(arr);
+                }else{
+                    console.error("Uno de los valores ingresados no es valido");
+                }
+            }
+            //ejercicio3("Hola mundo", " ");
+
+
+
+            const ejercicio4 = (s, n) => {
+
+                if(typeof s === 'string' || s instanceof String && typeof n === 'number'){
+                    s += " ";
+                    let str = s;
+                    for(let i = 0; i < n - 1; i++){
+                        s += str;
+                    }
+                    console.log(s);
+                    return s;
+                }else{
+                    console.error("Uno de los valores ingresados no es valido");
+                }
+            }
+            //ejercicio4("Hola", 3);
+
+            const ejerciico5 = (s) => {
+
+                let arr;
+                if(typeof s === 'string' || s instanceof String){
+                    arr = s.split("").reverse().join("");
+                    console.log(arr);
+                    return arr;
+
+                }else{
+                    console.error("El valor ingresado no es valido.");
+                }
+            }
+            //ejerciico5("Hola");
+
+
+            const ejercicio6 = (s, se) => {
+
+                let contador;
+                if((typeof s === 'string' || s instanceof String) && (typeof se === 'string' || se instanceof String)){
+                    contador = s.match(RegExp(se, 'g')).length;
+                    console.log(contador);
+                    return contador;
+                }else{
+                    console.error("El valor ingresado no es valido.");
+                }
+            }
+            //ejercicio6("Hola Hola Hola", "Hola");
+
+            const ejercicio7 = (s) => {
+                if(typeof s === 'string' || s instanceof String){
+                    let su = ejerciico5(s);
+                    su = su.toLocaleLowerCase();
+                    s = s.toLocaleLowerCase();
+
+                    if(su === s){
+                        return "Es un palindromo";
+                    }else{
+                        return "No es un palindromo";
+                    }
+
+
+                }else{
+                    console.error("El valor ingresado no es valido.");
+                }
+            }
+            //console.log(ejercicio7("oso"));
+
+
+            const ejercicio8 = (s, el) => {
+                if((typeof s === 'string' || s instanceof String) && (typeof el === 'string' || el instanceof String)){
+                    s = s.replace(el, "");
+                    console.log(s);
+                }else{
+                    console.error("El valor ingresado no es valido.");
+                }
+            }
+            //ejercicio8("Hola Mundo", "Hola");
+
+            const ejercicio18 = (s) => {
+                let vocales = 0,
+                    consonantes = 0;
+                if(typeof s === 'string' || s instanceof String){
+                    vocales = s.match(/[a,e,i,o,u]/ig);
+                    consonantes = s.match(/[^a,^e,^i,^o,^u]/ig);
+
+                    return `Hay ${vocales.length} vocales y ${consonantes.length} consonantes.`
+                }else{
+                    console.error("El tipo de dato no es valido.")
+                }
+            }
+            //console.log(ejercicio18("Hola mundo"));
+
+            const ejercicio20 = () => {
+                if(typeof s === 'string' || s instanceof String){
+                    
+
+
+
+
+                    
+                }else{
+                    console.error("El tipo de dato no es valido.")
+                }
+            }
+
+        </script>
+    </body>
+</html>
