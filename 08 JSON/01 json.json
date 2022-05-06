@@ -1,0 +1,11 @@
+{
+    "cadena":"objeto",
+    "numero":1,
+    "boolean":true,
+    "arreglo":["1", "2", "3"],
+    "objeto": {
+        "propuedad":"p1",
+        "propiedad":"p2"
+    },
+    "nulo":null
+}

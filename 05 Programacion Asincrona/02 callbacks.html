@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript callbacks</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Glossary/Callback_function
+
+            function ejemploCallback (n, callback){
+                setTimeout(() => {
+                    callback(n, n * n);
+                }, 0 || Math.random() * 1000);
+            }
+
+            ejemploCallback(2, (n, resultado) => {
+                console.log("Inicia callback");
+                console.log(`callback: ${n}, ${resultado}`);
+                ejemploCallback(4, (n, resultado) => {
+                    console.log(`callback: ${n}, ${resultado}`);
+                    ejemploCallback(6, (n, resultado) => {
+                        console.log(`callback: ${n}, ${resultado}`);
+                    });
+                });
+            });
+            
+        </script>
+    </body>
+</html>

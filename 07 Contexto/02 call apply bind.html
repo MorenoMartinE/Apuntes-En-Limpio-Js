@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Call apply bind</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+
+            //      
+
+            function imprimir(n){
+                console.log(`${this}, ${n}`);
+            }
+
+            imprimir(0);
+
+            const obj = {
+                nombre: "objeto",
+
+                imprimirEnObjeto: function() {
+                    console.log(this.nombre);
+                }
+            }
+
+            
+
+            //      Con el metodo call podemos invocar una funcion, pasandole como parametro un objeto
+            // para que esta se ejecute dentro de su contexto.
+            imprimir.call(obj, 1);
+
+            //      Apply funciona exactamente igual, con la particularidad de que permite agregar parametros
+            // a la funcion que se esta invocando en forma de arreglo.
+            imprimir.apply(obj, [2]);
+
+            //      Bind crea un enlace entre dos scops diferentes.
+            const obj2 = {
+                imprimirEnObjeto: obj.imprimirEnObjeto.bind(obj),
+            }
+
+            obj2.imprimirEnObjeto();
+        </script>
+    </body>
+</html>

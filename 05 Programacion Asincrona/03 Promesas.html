@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Promesas</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+            //      Cuando ejecutamos una promesa, lo que hacemos es indicarle al codigo que esta
+            // funcion asyncrona puede tener dos resultados. Resolve en caso de que el medio externo
+            // nos responda y reject en caso de que no.
+
+
+            function ejemploPromesas(n){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve({
+                            n,
+                            result: n * n,
+                        });
+                    }, Math.random() * 1000);
+                });
+            }
+
+            //      El metodo then, ejecutara el siguiente bloque de codigo luego de que la promesa
+            // resultara exitosa. Luego del metodo then, debemos utilizar el metodo catch, en caso de
+            // que la promesa no resultara exitosa.
+            //      Puede haber tantos .then como sea necesario (uno por cada invocacion de la funcion).
+
+
+            ejemploPromesas(0)
+                    .then((el) => {
+                        console.log(el.result);
+                        return ejemploPromesas(4);
+                    })
+                    .then((el) => { 
+                        console.log(el.result);
+                        return ejemploPromesas(6);
+                    })
+                    .then((el) => { 
+                        console.log(el.result);
+                    })
+                    .catch((err) => console.error(err));
+        </script>
+    </body>
+</html>

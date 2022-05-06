@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript JSON</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON
+            // https://www.json.org/json-en.html
+
+            //      JSON o JavaScriptObjectNotation es un formato ligero de intercambio de datos.
+            // Es uno de los actuales estandares para la transferencia de informacion, muy comunmente
+            // es utilizado para la transferencia de informacion entre distintos programas inclusive
+            // si estos no estan escritos en JavaScript.
+
+            //  Usado solo para ejemplo. Metodo fetch en apuntes posteriores
+            let datos;
+            function carga(){
+                return fetch("./01 json.json")
+                    .then((elemento) =>{
+                        return elemento.json();
+                    })
+            }
+            //  Usado solo para ejemplo. Metodo fetch en apuntes posteriores
+
+
+            async function capturarJson(){
+                datos = await carga();
+
+                //      El objeto JSON posee dos metodos stringify() toma un objeto o dato valido dentro de Js
+                // y lo transforma en una cadena de texto en formato JSON.
+                datos = JSON.stringify(datos);
+                console.log(datos);
+
+
+
+                //      Por otro lado el metodo, parse() que intentara leer el archivo json  
+                // (lo que para Js es una cadena de texto) y transformarlo en un tipo de dato que 
+                // javascript pueda entender.
+                datos = JSON.parse(datos);
+                console.log(datos);
+            }
+            
+            capturarJson();
+        </script>
+    </body>
+</html>

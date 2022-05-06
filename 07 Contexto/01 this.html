@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript This</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/this
+
+            //      this es una palabra reservada que hace referencia al contexto dentro del que
+            // estamos trabajando. En un navegador, fuera de un contexto especifico this hara referencia
+            // al window (en un entorno backend haria referencia a global). Puede ser utilizado para acceder
+            // a propiedades y metodos del contexto.
+
+            console.log(this === window);
+           
+            //  Por mas que this este dentro de una funcion, seguira mostrando a window debido a que
+            // esta siendo invocado dentro del hambito global.
+            function imprimirThis(){
+                console.log(this);
+            }
+
+            imprimirThis();
+
+
+            //  Por otra parte, al this ser invocado dentro de un objeto, actuara de manera diferente.
+            // Debido a que este estara haciendo referencia no al contexto global (objeto window en frontend),
+            // sino que estara haciendo referencia al contexto donde fue invocado (nuestro objeto obj).
+            const obj = {
+                nombre: "objeto",
+                imprimir:function (){
+                    console.log(this)
+                },
+
+                imprimirThis,
+
+                imprimirArrow: () => {
+                    console.log(this)
+                },
+            }
+
+            //  Los viejos scops de Js se basaban en funciones y objetos. Las funciones heredan el
+            // contexto del lugar donde fueron declaradas. Esto tambien funciona si asignamos una funcion
+            // ya existente dentro de un objeto.
+            obj.imprimirThis();
+            obj.imprimir();
+
+
+            //  Una peculiaridad de las arrow function es que estas toman el contexto del lugar donde
+            // es declarado el objeto en el que aparecen. Es decir tomara como suyo el scop superior.
+            obj.imprimirArrow();
+        </script>
+    </body>
+</html>

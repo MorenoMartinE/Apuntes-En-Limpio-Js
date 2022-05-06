@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Datos ES6</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+            
+            //      Symbol sirve para crear un identificador unico, es un tipo de dato primitivo.Suelen ser usados 
+            // para evitar coliciones etre atributos de objetos. Las propiedades de tipo Symbol, no se sobre escribiran. 
+            // Estas funcionan como propiedades "privadas".
+
+            const ID = Symbol("id");
+            const ID2 = Symbol("id");
+            console.log(ID, ID2);
+            console.log(ID === ID2);
+
+            const NOMBRE = Symbol();
+
+            const objeto = {
+                [NOMBRE]: "objeto",
+            }
+
+            console.log(objeto);
+
+            objeto.NOMBRE = "objeto2";
+
+            console.log(objeto);
+            console.log(objeto[NOMBRE]);
+
+            //      Documentación
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Set
+
+            //      El tipo de dato set, es un arreglo mejorado de javascript que solo admite valores
+            // unicos. Set ignorara todos los duplicados.
+
+            const set = new Set(["a", "a", 1, "1", 1]);
+            console.log(set);
+
+            //  Documentación:
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+
+            //      Maps es una coleccion de datos primitivos. Suelen utilizarse para almacenar colecciones de datos
+            // primitivos que de alguna manera esten relacionados.
+
+            const mapa = new Map([
+                ["Nombre","Objeto"],
+                ["Caracteristicas","iterador"]
+            ]);
+            mapa.set("Numero", 1);
+
+            console.log(mapa);
+
+            //      Documentación
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/WeakSet
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/WeakMap
+
+            //      Los weak set y map son similares a sus contrapartes estandares, con la salvedad
+            // de que sus key deben de ser objetos. No pueden ser iterados, tampoco se pueden eliminar
+            // todos los elementos con el metodo clear y tampoco se puede verificar su tamaño con el
+            // metodo size.
+
+            const ws = new WeakSet();
+            const 
+                valor1 = {"valor1":1},
+                valor2 = {"valor2":2},
+                valor3 = {"valor3":3};
+        
+            ws.add(valor1);
+            ws.add(valor2);
+            ws.add(valor3);
+
+            console.log(ws);
+
+            const wm = new WeakMap();
+            const 
+                llave1 = {},
+                llave2 = {},
+                llave3 = {};
+
+            wm.set(llave1, 1);
+            wm.set(llave2, 2);
+            wm.set(llave3, 3);
+
+            console.log(wm);
+
+
+            //      Documentación
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Iterators_and_Generators
+
+            //      Cuando decimos que una estructura de dato es iterable, queremos decir que esta es
+            // lineal, sus datos son publicos y puede ser recorrida.
+            
+            const iterable = [1, 2, 3, 4, 5];
+
+            //      Accediendo al iterable de nuestro iterador, el iterador es una interface especial
+            // para recorrer los elementos. Al ser utilizada con el metodo .next() devolvera la posicion
+            // y un boolean que sera falso si quedan mas elementos que itarar o true si todos ya fueran
+            // iterados.
+            const iterador = iterable[Symbol.iterator]();
+            console.log(iterador.next());
+            console.log(iterador.next());
+            console.log(iterador.next());
+            console.log(iterador.next());
+            console.log(iterador.next());
+            console.log(iterador.next());
+
+
+
+            //      Documentación
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Generator
+
+            //      Las funciones generator, son aquellas que pueden ser iteradas en vez de ejecutadas
+            // por comoleto. De manera similar a una funcion "asincrona". yield funciona exactamente igual
+            // que un return, solo que "marca" el momento en el que se termina una iteracion y se puede
+            // iniciar la siguiente. 
+            function* iterableGen(){
+                yield "hola, ";
+                yield "esta funcion, ";
+                yield "esta iterando.";
+            }
+
+            let iteradorGen = iterableGen();
+            
+            console.log(iteradorGen.next());
+            console.log(iteradorGen.next());
+            console.log(iteradorGen.next());
+            
+            //      Documentación
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+
+            //      Los proxies permiten crear "instancias" a partir de un objeto literal.
+            const objetoLiteral ={
+                nombe:"",
+                numero:0,
+            }
+            const manejador = {
+                set(obj, prop, valor){
+                    obj[prop] = valor;
+                }
+            }
+
+            const instanciaDeObjeto = new Proxy(objetoLiteral, manejador);
+            instanciaDeObjeto.nombe = "objeto1";
+            instanciaDeObjeto.numero = 1;
+
+            console.log(instanciaDeObjeto);
+        </script>
+    </body>
+</html>

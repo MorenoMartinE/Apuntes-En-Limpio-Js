@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang?="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+    </head>
+    <body>
+        <h1>Fundamentos JavaScript Temporizadores</h1>
+        <script>
+            //      Documentación:
+            // https://developer.mozilla.org/es/docs/Web/API/setTimeout
+            // https://developer.mozilla.org/es/docs/Web/API/setInterval
+            // https://developer.mozilla.org/es/docs/Web/API/clearInterval
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/async_function
+            // https://developer.mozilla.org/es/docs/Web/JavaScript/EventLoop
+
+            //      Las operaciones asyncronas son quellas que se ejecutan, pero devuelven el control del
+            // hilo del proceso al resto del programa sin esperar el resultado de su peticion con el
+            // proposito de no bloquear la ejecucion del proceso. Suelen ser usadas para conectarse con
+            // medios externos como APIs, bases de datos, etc.
+
+            //      El principal proposito de las funciones asincronicas es poder ejecutar bloques de codigo
+            // que tienen la posibilidad de tomar una cantidad de tiempo "grande" sin bloquear el hijo
+            // de ejecucion del resto del codigo.
+
+            //      Los temporizadores nos permiten ejecutar a posterior ciertos bloques de codigo. setTimeout(),
+            // nos permite ejecutar una funcion, con un delay dado en ms. Sus parametros son la funcion que se
+            // ejecutara y el tiempo en ms que esperara antes de ejecutarse.
+
+            let temp = setTimeout(() => {
+                console.log("Este codigo se ejecutara 1 vez con 1000ms de tiempo de espera desde su invocacion.");
+            }, 1000);
+
+            clearTimeout(temp); // Eliminara el setTimeout
+
+            //      Por otro lado, setInterval, funciona de manera similar. Con la diferencia de que se ejecutara
+            // indefinidamente hasta que el intervalo sea limpiado con clearInterval().
+            
+            let interval = setInterval(() => {
+                console.log("Este codigo se ejecutara una vez por segundo de manera indefinida.");
+            }, 1000)
+
+            clearInterval(interval); // Elimina el intervalo.
+
+        </script>
+    </body>
+</html>
